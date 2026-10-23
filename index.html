@@ -1,0 +1,92 @@
+<!-- Structure de base d'une page HTML -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTS-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Luangraj Kylian - Etudiant en developpement d'applications </title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+<header class="site-header">
+    <!-- Développement de la navigation par liste ul et li en les stylisant ensuite dans le css. -->
+
+    <nav class="nav">
+        <a href="index.html" class="nav-mark"> Luangraj Kylian</a>
+        <ul class="nav-links">
+            <!-- Utilisation de aria-current="page" Pour définir dans le css sur quelle page nous sommes actuellement dans le but que sur la nav, le bouton Accueil dans le cas de cette page soit en rouge comparer aux autres. -->
+            <li><a href="index.html" aria-current="page"> Accueil</a></li>
+            <li><a href="profil.html"> Profil</a></li>
+            <li><a href="formation.html"> Formation</a></li>
+            <li><a href="competence.html"> Competences</a></li>
+            <li><a href="realisations.html"> Realisations</a></li>
+            <li><a href="contact.html"> Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- Présentation courte avec photo + texte de présentation sur moi. -->
+
+<main>
+    <section class="hero">
+        <div class="hero-text">
+            <p class="kicker">1re année BTS SIO — option SLAM</p>
+            <h1>Étudiant en informatique, développement d'applications</h1>
+            <p class="role">Kylian Luangraj — Cned Poitiers, à distance</p>
+            <p>Passioné d'informatique depuis tout petit. J'aime coder sur mes temps libre et apprendre chaque jours. Je m'intéresse davantage aux développements de jeux, la 3D interactive et l'UI.</p>
+        </div>
+        <div class="hero-photo">
+            <img src="assets/img/kylian-photo.png" alt="Portrait professionnel de Luangraj Kylian">
+        </div>
+    </section>
+    <section>
+        <!-- Call pour les recruteurs en leurs proposant le fait que je souhaite un stage de 4 à 5 semaines lors de l'année prochaine sur les domaines proposés. Il sera bien mis en avant dans un bloc de couleur entouré de rouge et le texte important aussi relevé comparer aux autres. -->
+        <div class="call">
+            <p><strong>Recherche de Stage</strong> - Développement de site web et d'applications. 4 à 5 semaines disponible entre Février 2027 à Août 2027.</p>
+        </div>
+    </section>
+    <!-- Un petit à propos dont j'ai eu l'idée de construire pour définir mes objectifs concrets ainsi que mes traits de personnalité pour que le recruteur connaisse réellement ma personne et mes points forts. -->
+    <section>
+        <div class="propos">
+            <div class="card-propos">
+            <p class="eyebrow">À propos</p> 
+            <h3>Pourquoi le développement</h3>
+            <p>Je me suis lancé dans le domaine du code car c'est un espace dans lequel je parviens à rendre réel ce que j'imagine intérieurement. Je peux laisser place à mon imagination et ainsi développer sans limite. Mon objectif serait de pouvoir partager tout ce que je ressens et plus tard de travailler en tant que chef de projet informatique.</p>
+            </div>
+            <div class="cards-liste">
+                <p class="eyebrow">Traits de personnalité</p>
+                <ul class="trait-liste">
+                    <!-- Différents traits mis en avant, surtout des traits pouvant démontrer ma motivation à apprendre ainsi que ma facilité à pouvoir travailler avec n'importe qui. -->
+                    <li class="trait">
+                        <div class="trait-head"><span>Curiosité</span><span>65%</span></div>
+                        <div class="trait-bar"><div class="trait-fill" style="width:65%;"></div></div>
+                    </li>
+                    <li class="trait">
+                        <div class="trait-head"><span>Créativité</span><span>100%</span></div>
+                        <div class="trait-bar"><div class="trait-fill" style="width:100%;"></div></div>
+                    </li>
+                    <li class="trait">
+                        <div class="trait-head"><span>Rigueur</span><span>85%</span></div>
+                        <div class="trait-bar"><div class="trait-fill" style="width:85%;"></div></div>
+                    </li>
+                    <li class="trait">
+                        <div class="trait-head"><span>Travail d'équipe</span><span>95%</span></div>
+                        <div class="trait-bar"><div class="trait-fill" style="width:95%;"></div></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Footer de la page ainsi que la redirection vers mon GitHub. -->
+
+<footer>
+    <p>&copy; 2026 Kylian Luangraj</p>
+    <a href="https://github.com/SpectrionStudio" target="_blank" rel="noopener">GitHub</a>
+</footer>
+</body>
+</html>
+
+
+

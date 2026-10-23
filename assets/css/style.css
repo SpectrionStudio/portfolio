@@ -1,0 +1,744 @@
+/* Bienvenu sur le css de mon site internet, j'ai opté pour un style contrastant entre le rouge et noir car c'est une DA qui me plaît énormément et j'ai fais de mon mieux pour la respecter jusqu'à la fin.
+En espérant que vous apprécierez mon projet, il sera commenté jusqu'au bout par des petits messages de temps en temps, expliquant mes choix durant la création de mon site portfolio ! */
+
+
+:root{
+    --bg: #0c0c0d;
+    --bg-raised: #17171a;
+    --line: #2a2a2d;
+    --text: #f1f0ee;
+    --text-muted: #8a8886;
+    --accent: #e8352f;
+    --accent-dim: #b8241f;
+    --accent-ink: #ffffff;
+}
+
+*,*::before,*::after{
+
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    background:var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+}
+
+.site-header{
+
+    background: var(--bg-raised);
+    border-bottom: 1px solid var(--line);
+}
+/* J'ai opté pour une navigation simple qui ne reste pas fixe et qui s'en va une fois que l'on scroll. On conserve simplement la couleur rouge sur la page actuelle où l'on se trouve et la couleur d'une des redirections de la navigation change lorsque l'on passe la souris dessus. */
+
+.nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 18px 24px;
+
+}
+
+.nav-links{
+
+
+    display:flex;
+    gap:28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a{
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.nav-mark{
+
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+}
+/* Le changement de couleur se trouve ici avec la class définissant la page actuelle sur laquelle on se trouve, pour faire le lien avec le HTML. */
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"]{
+    color:var(--accent);
+}
+
+/* J'ai souhaité que le texte soit plus impactant que l'image en lui donnant une place bien plus importante. Tout aligné sur le centre de la page pour faciliter la prise d'information de la personne visitant le protfolio. */
+
+
+.hero{
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 60px 24px;
+}
+
+
+
+.hero-photo{
+  min-width:0;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  border-radius:12px;
+}
+
+/* J'ai eu un peu de difficulté avec la photo que l'on retrouve sur l'index, elle n'était pas adaptée à la taille que je souhaitais utiliser soit donc le 2fr 1fr et donc on retrouvait une photo qui prenait bien trop de place.
+J'ai donc redimnsionné la photo en faisant en sorte que les contours qui dépassent soient cachés par la box inventée. */
+
+
+.hero-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* Les paragraphes suivants sont principalement des modifications pour le texte, tout comme pour le h1, role et kicker. De plus call a notamment servi pour la box faisant appel de stage dans l'index.
+C'est un élément de la page que je souhaitais ressortir au plus donc je l'ai entouré de rouge qui est la couleur importante de mon portfolio ainsi que le texte en lui-même "recherche de stage" qui lui aussi se retrouve en rouge.*/
+
+
+.kicker{
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.role{
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+h1{
+    font-size: 2.6rem;
+    line-height: 1.15;
+    margin: 0 0 20px;
+}
+
+.call{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    border: 1px solid var(--accent);
+    background: rgba(232,53,47,0.08);
+    border-radius: 12px;
+}
+
+.call strong{
+    color: var(--accent);
+}
+
+/* Je suis ensuite parti sur l'idée de vouloir faire des barres de statistiques pour montrer un peu les différentes factettes de ma personnalité et ainsi que le recruteur puisse voir avec quel type de personne il travaille.
+Je suis donc parti sur tout d'abord un bloc à propos et à côté les barres. On est toujours sur du 2fr pour le à propos et 1fr pour les barres. Je tenais à mettre les barres en couleur vert pour faire référence à des jeux dont l'exp dans minecraft mais en essayant, j'ai rapidement remarqué que ce n'était pas du tout en accord avec la DA de base et je suis donc reparti sur le rouge. */
+
+
+.propos {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+
+.trait-liste {
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.trait-head{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.trait-bar{
+
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.trait-fill{
+    height: 100%;
+    background: var(--accent);
+    border-radius: 999px;
+}
+/* Ici simple création de bordures pour les cards que j'ai créé, soit donc les deux blocs de à propos et des barres.J'ai conservé une couleur qui se discerne légèrement du fond initial. */
+
+.card-propos,
+.cards-liste{
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+footer{
+    max-width:1080px;
+    margin:0 auto;
+    padding:32px 24px;
+    border-top:1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:var(--text-muted);
+    font-size:0.85rem;
+}
+/* Ici on remplace simplement le lien de couleur bleu en gris pour rester dans la DA. */
+
+footer a{
+    color:var(--text-muted);
+    text-decoration:none;
+}
+/* Le lien devient tout simplement rouge en passant la souris sur le texte. */
+
+footer a:hover{
+    color:var(--accent);
+}
+
+.profil-head{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 48px 24px 0;
+}
+
+.profil-grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 24px 48px;
+    align-items: start;
+}
+/* Maintenant on passe à la personnalisation de la phrase d'accroche. On place une barrière de couleur sur le côté en reprenant le rouge précédent de --accent pour montrer
+l'importance du message d'accroche. */
+
+.accroche{
+    border-left:3px solid var(--accent);
+    padding-left:16px;
+    font-size:1.2rem;
+    color:var(--text);
+    margin-top:16px;
+    max-width:60ch;
+}
+/* On fabrique une liste dans notre paragraphe en utilisant le ::before pour placer une flèche avant chaque li et 
+on retire les décorations de liste pour éviter les points originaux. ça nous donne donc une liste à flèche comme prévue.*/
+
+.motiv-list{
+    list-style:none;
+    margin:12px 0 0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.motiv-list li{
+    padding-left:24px;
+    position:relative;
+}
+
+.motiv-list li::before{
+    content:"→";
+    color:var(--accent);
+    position:absolute;
+    left:0;
+}
+
+
+
+.interets-head{
+    max-width:1080px;
+    margin:0 auto;
+    padding:48px 24px 0;
+    border-top:1px solid var(--line);
+
+}
+
+.interets-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    max-width:1080px;
+    margin:0 auto;
+    padding:24px 24px 48px;
+}
+
+.flip-carte{
+    perspective:1000px;
+    height:160px;
+}
+
+.flip-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    text-align:center;
+    transition:transform 0.5s;
+    transform-style:preserve-3d;
+}
+
+.flip-carte:hover .flip-inner{
+    transform:rotateY(180deg);
+}
+/* Les éléments que l'on applique dans les deux cas possibles, que la carte soit tournée en avant ou en arrière. Pas besoin de le répéter deux fois au moins. */
+
+.flip-front,
+.flip-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    border-radius:12px;
+    border:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:16px;
+}
+
+.flip-front{
+    background:var(--bg-raised);
+}
+
+.flip-icone{
+    font-size:2rem;
+    margin-bottom:8px;
+    display:block;
+}
+/* J'ai tout de même souhaité une couleur en particulier pour l'arrière au final en reprenant le gris clair de --bg raised. Tandis que le texte restera blanc. Au début j'avais opté pour le rouge
+mais il était bien trop dominant et cela en faisait mal aux yeux, j'ai donc remplacé celui-ci par la couleur actuelle sur le site. */
+
+.flip-back{
+    background:var(--bg-raised);
+    border:1px solid var(--accent);
+    color:var(--text);
+    transform:rotateY(180deg);
+    font-size:0.85rem;
+}
+
+.flip-back p{
+    margin:0;
+    font-size:0.88rem;
+    line-height:1.45;
+}
+
+.flip-title{
+    font-weight:600;
+    font-size:1rem;
+    margin:0;
+    color:var(--text);
+}
+
+/* Les titres de cartes ne ressortaient suffissament pas de la carte en elle-même, j'ai donc choisi à la fin de la création de page de les rendre plus visible qu'initialement prévu.*/
+
+
+
+
+
+
+
+
+/* Modification du texte.*/
+.section-head{
+    max-width:1080px;
+    margin:0 auto;
+    padding:48px 24px 0;
+}
+
+.section-head h1{
+    font-size:2rem;
+}
+
+
+
+/* On modifie la liste ol avec la classe timeline en retirant le style de la liste et ses décorations ainsi qu'en faisant apparaître cette fameuse bordure sur la gauche de couleur grise.*/
+.timeline{
+    list-style:none;
+    margin:0 auto;
+    padding:32px 24px 48px;
+    max-width:1080px;
+    border-left:2px solid var(--line);
+}
+
+.timeline li{
+    position:relative;
+    padding:10px 16px 32px 28px;
+    border-radius:8px;
+    transition:background 0.2s ease, padding-left 0.2s ease;
+}
+
+.timeline li:hover{
+    background:var(--bg-raised);
+    padding-left:36px;
+}
+
+/* On place le point rouge stylisé avant chaque listes des formations en question en rendant sa position absolue*/
+.timeline li::before{
+    content:"";
+    position:absolute;
+    left:-7px;
+    top:6px;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:var(--bg);
+    border:2px solid var(--accent);
+}
+
+/* Modification du texte représentant la période pour chaque points se trouvant dans la classe timeline.*/
+.timeline .period{
+    color:var(--accent);
+    font-weight:600;
+    font-size:0.85rem;
+    margin-bottom:4px;
+}
+
+.timeline h3{
+    font-size:1.1rem;
+    margin:0 0 4px;
+}
+/* même chose que pour timeline .period mais cette fois avec le lieu.*/
+.timeline .place{
+    color:var(--text-muted);
+    font-size:0.9rem;
+    margin-bottom:6px;
+}
+
+
+.focus-wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px 48px;
+}
+/* modification de texte pour le h2*/
+.focus-wrap h2{
+    font-size:1.5rem;
+    margin-top:8px;
+}
+
+/* On passe sur des blocs apparaissant en 1.5fr pour la description du BTS pour 1fr sur les compétences liées à la formation.*/
+.focus-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:0;
+    border:1px solid var(--line);
+    border-radius:12px;
+    overflow:hidden;
+    margin-top:20px;
+}
+
+.focus-text{
+    padding:24px;
+}
+/* définition de taille, de l'intérieur et des bords en couleur des blocs.*/
+.focus-side{
+    background:var(--bg-raised);
+    border-left:1px solid var(--line);
+    padding:24px;
+}
+
+.focus-side-label{
+    font-size:0.78rem;
+    color:var(--text-muted);
+    margin:0 0 10px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+}
+
+.focus-matieres li{
+    padding-left:18px;
+    position:relative;
+    font-size:0.9rem;
+    transition:color 0.2s ease;
+}
+/* Petite interaction pour que quand on passe la souris sur la compétence, celle-ci passe au rouge.*/
+.focus-matieres li:hover{
+    color:var(--accent);
+}
+
+.competences-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+    max-width:1080px;
+    margin:0 auto;
+    padding:32px 24px 48px;
+    align-items:start
+}
+
+.skill-cat{
+    background:var(--bg-raised);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:24px;
+}
+
+.skill-cat h2{
+    font-size:0.85rem;
+    color:var(--text-muted);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin:0 0 16px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--line);
+}
+
+.skill-liste{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(110px,1fr));
+    gap:12px;
+}
+
+.skill-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    padding:14px 8px;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:10px;
+    font-size:0.85rem;
+    transition:border-color 0.2s ease, transform 0.2s ease;
+    text-align:center;
+}
+
+.skill-item i,
+.skill-emoji{
+    font-size:1.8rem;
+    color:var(--text);
+    transition:color 0.2s ease;
+    line-height: 1;
+}
+
+.skill-item:hover{
+    border-color:var(--accent);
+    transform:translateY(-3px);
+}
+
+.skill-item:hover i{
+    color:var(--accent);
+}
+
+.langues {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px;
+    padding-bottom: 20px;
+}
+
+.langues-liste{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+}
+
+.langue{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    padding:14px 8px;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:10px;
+    font-size:0.85rem;
+    transition:border-color 0.2s ease, transform 0.2s ease;
+    text-align:center;
+    min-width:160px;
+}
+
+.langue-niveau{
+    color:var(--text-muted);
+    font-size: 0.70rem;
+    display:block
+}
+
+
+.projets-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:24px;
+    max-width:1080px;
+    margin:0 auto;
+    padding:32px 24px 48px;
+}
+
+.projet-carte{
+    display:flex;
+    flex-direction:column;
+    background:var(--bg-raised);
+    border:1px solid var(--line);
+    border-radius:12px;
+    overflow:hidden;
+    text-decoration:none;
+    color:var(--text);
+    transition:border-color 0.2s ease, transform 0.2s ease;
+}
+
+.projet-carte:hover{
+    border-color:var(--accent);
+    transform:translateY(-3px);
+}
+
+.projet-miniature{
+    aspect-ratio:16/10;
+    background:linear-gradient(135deg, var(--bg-raised), var(--bg));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--text-muted);
+    font-size:0.85rem;
+    border-bottom:1px solid var(--line);
+}
+
+.projet-miniature img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.projet-corps{
+    padding:20px;
+}
+
+.projet-cat{
+    color:var(--accent);
+    font-size:0.75rem;
+    font-weight:600;
+    margin:0 0 8px;
+}
+
+.projet-corps h2{
+    font-size:1.1rem;
+    margin:0 0 6px;
+}
+
+.projet-techs{
+    list-style:none;
+    margin:12px 0 0;
+    padding:0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+}
+
+.projet-techs li{
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:3px 10px;
+    font-size:0.78rem;
+    color:var(--text-muted);
+}
+
+.projet-date{
+    color:var(--text-muted);
+    font-size:0.8rem;
+    margin:12px 0 0;
+}
+
+.eyebrow a{
+    color:var(--accent);
+    text-decoration:none;
+}
+
+.detail-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:40px;
+    max-width:1080px;
+    margin:0 auto;
+    padding:24px 24px 48px;
+    align-items:start;
+}
+
+.detail-texte h2{
+    font-size:1.2rem;
+    margin:0 0 8px;
+}
+
+.detail-texte p{
+    margin:0 0 28px;
+}
+
+.detail-infos{
+    background:var(--bg-raised);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:22px;
+}
+
+.detail-infos h3{
+    font-size:0.8rem;
+    color:var(--text-muted);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin:0 0 12px;
+}
+
+.detail-infos dl{
+    margin:0 0 24px;
+}
+
+.detail-infos dt{
+    font-size:0.78rem;
+    color:var(--text-muted);
+    margin-top:12px;
+}
+
+.detail-infos dd{
+    margin:2px 0 0;
+    font-weight:500;
+}
+
+.detail-infos a{
+    color:var(--accent);
+}
+
+.comp-liste{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.comp-liste li{
+    padding:8px 0 8px 24px;
+    position:relative;
+    border-bottom:1px solid var(--line);
+    font-size:0.9rem;
+}
+
+.comp-liste li::before{
+    content:"→";
+    color:var(--accent);
+    position:absolute;
+    left:0;
+}
