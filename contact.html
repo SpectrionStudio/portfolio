@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Kylian Luangraj</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <nav class="nav">
+        <a href="index.html" class="nav-mark"> Luangraj Kylian</a>
+        <ul class="nav-links">
+            <li><a href="index.html"> Accueil</a></li>
+            <li><a href="profil.html"> Profil</a></li>
+            <li><a href="formation.html"> Formation</a></li>
+            <li><a href="competence.html"> Compétences</a></li>
+            <li><a href="realisations.html"> Réalisations</a></li>
+            <li><a href="contact.html" aria-current="page"> Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">Contact</p>
+      <h1>Me contacter</h1>
+      <p>Disponible pour un stage en développement d'applications.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-infos">
+        <div class="contact-cartes">
+
+          <div class="contact-carte">
+            <span class="contact-icone" aria-hidden="true">📍</span>
+            <div class="contact-texte">
+              <span class="contact-label">Ville</span>
+              <span class="contact-valeur">Montagnac</span>
+            </div>
+          </div>
+
+          <a class="contact-carte" href="mailto:kylian.luangraj@outlook.fr">
+            <span class="contact-icone" aria-hidden="true">✉️</span>
+            <div class="contact-texte">
+              <span class="contact-label">E-mail</span>
+              <span class="contact-valeur">kylian.luangraj@outlook.fr</span>
+            </div>
+            <span class="contact-fleche" aria-hidden="true">→</span>
+          </a>
+
+          <a class="contact-carte" href="tel:+33612541310">
+            <span class="contact-icone" aria-hidden="true">📞</span>
+            <div class="contact-texte">
+              <span class="contact-label">Téléphone</span>
+              <span class="contact-valeur">06 12 54 13 10</span>
+            </div>
+            <span class="contact-fleche" aria-hidden="true">→</span>
+          </a>
+
+          <a class="contact-carte" href="https://www.linkedin.com/in/kylianluangraj/" target="_blank" rel="noopener">
+            <span class="contact-icone" aria-hidden="true"><i class="devicon-linkedin-plain"></i></span>
+            <div class="contact-texte">
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-valeur">linkedin.com/in/kylianluangraj</span>
+            </div>
+            <span class="contact-fleche" aria-hidden="true">→</span>
+          </a>
+
+          <a class="contact-carte" href="https://github.com/SpectrionStudio" target="_blank" rel="noopener">
+            <span class="contact-icone" aria-hidden="true"><i class="devicon-github-original"></i></span>
+            <div class="contact-texte">
+              <span class="contact-label">GitHub</span>
+              <span class="contact-valeur">github.com/SpectrionStudio</span>
+            </div>
+            <span class="contact-fleche" aria-hidden="true">→</span>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h2>Formulaire de contact</h2>
+        <form action="https://formspree.io/f/mzeepqqp" method="POST">
+          <div class="champ">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" required>
+          </div>
+          <div class="champ">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="champ">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn-envoyer">Envoyer</button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="contact-map-wrap">
+      <div class="contact-map">
+        <iframe
+          title="Localisation approximative : Montagnac"
+          src="https://www.google.com/maps?q=Montagnac,France&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Kylian Luangraj</p>
+    <a href="https://github.com/SpectrionStudio" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
+</body>
+</html>
