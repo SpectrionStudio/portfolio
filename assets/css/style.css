@@ -27,9 +27,10 @@ body{
 }
 
 .site-header{
-
-    background: var(--bg-raised);
-    border-bottom: 1px solid var(--line);
+    background:var(--bg-raised);
+    border-bottom:1px solid var(--line);
+    position:relative;
+    z-index:100;
 }
 /* J'ai opté pour une navigation simple qui ne reste pas fixe et qui s'en va une fois que l'on scroll. On conserve simplement la couleur rouge sur la page actuelle où l'on se trouve et la couleur d'une des redirections de la navigation change lorsque l'on passe la souris dessus. */
 
@@ -962,13 +963,6 @@ a.contact-carte:hover .contact-fleche{
         grid-template-columns:1fr;
     }
 
-}
-
-@media (max-width:760px){
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
     .hero,
     .propos,
     .profil-grid,
@@ -1000,18 +994,6 @@ a.contact-carte:hover .contact-fleche{
     .interets-grid{
         grid-template-columns:repeat(2,1fr);
     }
-}
-
-@media (max-width:480px){
-    .interets-grid{
-        grid-template-columns:1fr;
-    }
-}
-
-    .site-header{
-        position:relative;
-        z-index:100
-    }
 
     .nav-toggle{
         display:block;
@@ -1038,8 +1020,15 @@ a.contact-carte:hover .contact-fleche{
         display:block;
         padding:12px 0;
     }
+}
 
-    @media (hover:hover){
+@media (max-width:480px){
+    .interets-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media (hover:hover){
     .flip-carte:hover .flip-inner{
         transform:rotateY(180deg);
     }
@@ -1047,9 +1036,5 @@ a.contact-carte:hover .contact-fleche{
 
 .flip-carte.retournee .flip-inner{
     transform:rotateY(180deg);
-}
-
-.flip-carte{
-    cursor:pointer;
 }
 /* Les éléments que l'on applique dans les deux cas possibles, que la carte soit tournée en avant ou en arrière. Pas besoin de le répéter deux fois au moins. */
