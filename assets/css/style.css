@@ -298,10 +298,7 @@ on retire les décorations de liste pour éviter les points originaux. ça nous 
     transform-style:preserve-3d;
 }
 
-.flip-carte:hover .flip-inner{
-    transform:rotateY(180deg);
-}
-/* Les éléments que l'on applique dans les deux cas possibles, que la carte soit tournée en avant ou en arrière. Pas besoin de le répéter deux fois au moins. */
+
 
 .flip-front,
 .flip-back{
@@ -911,12 +908,6 @@ a.contact-carte:hover .contact-fleche{
     border:0;
 }
 
-@media (max-width:760px){
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-}
-
 .btn-row{
     display:flex;
     flex-wrap:wrap;
@@ -954,3 +945,111 @@ a.contact-carte:hover .contact-fleche{
     border-color:var(--accent);
     color:var(--accent);
 }
+
+.nav-toggle{
+    display:none;
+    background:none;
+    border:1px solid var(--line);
+    color:var(--text);
+    border-radius:8px;
+    padding:8px 12px;
+    font-size:1.1rem;
+    cursor:pointer;
+}
+
+@media (max-width:760px){
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media (max-width:760px){
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero,
+    .propos,
+    .profil-grid,
+    .focus-grid,
+    .competences-grid,
+    .detail-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding:32px 24px;
+    }
+
+    .hero-photo{
+        order:-1;
+        max-width:240px;
+        margin:0 auto;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    .focus-side{
+        border-left:none;
+        border-top:1px solid var(--line);
+    }
+
+    .interets-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media (max-width:480px){
+    .interets-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+    .site-header{
+        position:relative;
+        z-index:100
+    }
+
+    .nav-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        flex-direction:column;
+        gap:0;
+        background:var(--bg-raised);
+        border-bottom:1px solid var(--line);
+        padding:8px 24px 16px;
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .nav-links a{
+        display:block;
+        padding:12px 0;
+    }
+
+    @media (hover:hover){
+    .flip-carte:hover .flip-inner{
+        transform:rotateY(180deg);
+    }
+}
+
+.flip-carte.retournee .flip-inner{
+    transform:rotateY(180deg);
+}
+
+.flip-carte{
+    cursor:pointer;
+}
+/* Les éléments que l'on applique dans les deux cas possibles, que la carte soit tournée en avant ou en arrière. Pas besoin de le répéter deux fois au moins. */
